@@ -12,20 +12,20 @@ makeCacheMatrix <- function(x = matrix()) {
 
 	#set the value of the matrix
 	set <- function(y) {
-	    ## caches the inputted matrix so that cacheSolve can check 
-	    ##whether it has changed (note this is within the setmatrix function)
+          ## caches the inputted matrix so that cacheSolve can check 
+          ##whether it has changed (note this is within the setmatrix function)
           x <<- y
 
-	    ##sets the value of m (the matrix inverse if used cacheSolve) to NULL
+          ##sets the value of m (the matrix inverse if used cacheSolve) to NULL
           m <<- NULL
       }
 
-	#set the value of the matrix
+      ##set the value of the matrix
       get <- function() x
       setInverse <- function(inverse) m <<-inverse
 	getInverse <- function() m
 	
-	##creates a list to hold the four functions
+      ##creates a list to hold the four functions
       list(set = set, get = get,
            setInverse = setInverse,
            getInverse = getInverse)
